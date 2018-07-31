@@ -15,7 +15,6 @@ export class AppComponent {
   constructor() {
 
     this.loginForm = new FormGroup({
-
       firstname: new FormControl('', [Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       lastname: new FormControl('', [Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       emailid: new FormControl('', [Validators.required, Validators.email]),
@@ -24,7 +23,8 @@ export class AppComponent {
       gender: new FormControl('', [Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       confirmpassword: new FormControl('', [Validators.required,Validators.minLength(8),Validators.maxLength(20)]),
       empid: new FormControl('', [Validators.required,Validators.min(4),Validators.max(4),Validators.pattern('[0-9]*')])
-
     });
+
   }
+
 }
