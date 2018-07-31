@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewformdata.component.css']
 })
 export class ViewformdataComponent implements OnInit {
-
-  constructor() { }
+show;
+  constructor() {
+    this.show = JSON.parse(localStorage.getItem("totaldata"));
+  }
 
   ngOnInit() {
   }
