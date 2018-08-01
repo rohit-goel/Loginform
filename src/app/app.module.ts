@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ViewformdataComponent } from './viewformdata/viewformdata.component';
 import { EditformdataComponent } from './editformdata/editformdata.component';
+import { FormserviceService } from './formservice.service';
 
 const routes: Routes = [
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [FormserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

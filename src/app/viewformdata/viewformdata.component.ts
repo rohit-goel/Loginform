@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '../../../node_modules/@angular/router';
+import { FormserviceService } from '../formservice.service';
 
 @Component({
   selector: 'app-viewformdata',
@@ -8,10 +9,9 @@ import { Router } from '../../../node_modules/@angular/router';
 })
 export class ViewformdataComponent implements OnInit {
   show;
-  constructor(private routes:Router) {
-    this.show = JSON.parse(localStorage.getItem("totaldata"));
+  constructor( private formservice:FormserviceService,private routes:Router) {
+    this.show=formservice.getMethod();
   }
-
   ngOnInit() {
   }
   backtoedit() {
