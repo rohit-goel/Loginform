@@ -20,10 +20,10 @@ export class EditformdataComponent implements OnInit {
   }
   loginform() {
     localStorage.setItem("totaldata", JSON.stringify(this.loginForm.value));
-    this.routes.navigate(["/editdata"]);
+    this.routes.navigate(["/viewdata"]);
   }
 
-  constructor(private routes:Router) {
+  constructor(private routes: Router) {
     this.loginForm = new FormGroup({
       firstname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
       lastname: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
@@ -35,7 +35,7 @@ export class EditformdataComponent implements OnInit {
       empid: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern('[0-9]*')])
     });
 
-   }
+  }
 
   ngOnInit() {
   }

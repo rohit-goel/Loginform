@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewformdata.component.css']
 })
 export class ViewformdataComponent implements OnInit {
-show;
+  show;
   constructor() {
     this.show = JSON.parse(localStorage.getItem("totaldata"));
   }
