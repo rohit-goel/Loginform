@@ -7,6 +7,7 @@ import { FormserviceService } from '../formservice.service';
   templateUrl: './viewformdata.component.html',
   styleUrls: ['./viewformdata.component.css']
 })
+
 export class ViewformdataComponent implements OnInit {
   show;
   constructor( private formservice:FormserviceService,private routes:Router) {
