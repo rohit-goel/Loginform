@@ -9,64 +9,73 @@
 
   <form [formGroup]="loginForm" (ngSubmit)="loginform()">
     <div class="form">
-    <label>
-      First Name:
-    </label><br />
+      <label>
+        First Name:
+      </label>
+      <br />
       <input class="imputfield" type="text" placeholder="First Name" formControlName="firstname">
-      <div class="invalidity" *ngIf="loginForm.controls['firstname'].touched && !loginForm.controls['firstname'].valid">Please Enter the First Name having at least two alphabets.</div>
-      <br />
-      <br />
-    <label>
-      Last Name:
-      </label><br />
-      <input class="imputfield" type="text" placeholder="Last Name" formControlName="lastname">
-      <div class="invalidity" *ngIf="loginForm.controls['lastname'].touched && !loginForm.controls['lastname'].valid">Please Enter Valid Name having at least 4 alphabets</div>
+      <div class="invalidity" *ngIf="loginForm.controls['firstname'].dirty && !loginForm.controls['firstname'].valid">Please Enter the First Name having at least two alphabets.</div>
       <br />
       <br />
       <label>
-      Email Id:
-      </label><br />
+        Last Name:
+      </label>
+      <br />
+      <input class="imputfield" type="text" placeholder="Last Name" formControlName="lastname">
+      <div class="invalidity" *ngIf="loginForm.controls['lastname'].dirty && !loginForm.controls['lastname'].valid">Please Enter Valid Name having at least 4 alphabets</div>
+      <br />
+      <br />
+      <label>
+        Email Id:
+      </label>
+      <br />
       <input class="imputfield" type="text" placeholder="Email Id" formControlName="emailid">
-      <div class="invalidity" *ngIf="loginForm.controls['emailid'].touched && !loginForm.controls['emailid'].valid">Invalid Email</div>
+      <div class="invalidity" *ngIf="loginForm.controls['emailid'].dirty && !loginForm.controls['emailid'].valid">Invalid Email</div>
       <br />
       <br />
-    <label>
-      Contact No.:
-      </label><br />
+      <label>
+        Contact No.:
+      </label>
+      <br />
       <input class="imputfield" type="text" placeholder="Contact No." formControlName="contact">
-      <div class="invalidity" *ngIf="loginForm.controls['contact'].touched && !loginForm.controls['contact'].valid">Invalid Contact Number</div>
+      <div class="invalidity" *ngIf="loginForm.controls['contact'].dirty && !loginForm.controls['contact'].valid">Enter 10 digit Contact number</div>
       <br />
       <br />
-    <label>
-      Password:
-      </label><br />
-      <input class="imputfield" type="password" placeholder="Enter Password" formControlName="password">
-      <div class="invalidity" *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">Invalid Password</div>
+      <label>
+        Password:
+      </label>
+      <br />
+      <input class="imputfield" [type]="pass" placeholder="Enter Password" formControlName="password" onclick="myFunction()" maxlength="16">
+      <span class="fa fa-eye" *ngIf="loginForm.controls['password'].touched" (mouseup)="hidepassword()" (mousedown)="showpassword()"></span>
+      <div class="invalidity" *ngIf="loginForm.controls['password'].dirty && !loginForm.controls['password'].valid">Contains at least min length 8 in which 1 digit, 1 uppercase, 1 lowercase and 1 special character</div>
       <br />
       <br />
-    <label>
-      Confirm Password
-      </label><br />
-      <input class="imputfield" type="password" placeholder="Enter Password Again" (keyup)="password_confirmation()" formControlName="confirmpassword">
-      <div class="invalidity" *ngIf="loginForm.controls['confirmpassword'].touched && !loginForm.controls['confirmpassword'].value !== !loginForm.controls['password'].value">Please enter same password</div>
+      <label>
+        Confirm Password
+      </label>
+      <br />
+      <input class="imputfield" type="password" placeholder="Confirm Password" (keyup)="password_confirmation()" formControlName="confirmpassword">
+      <div class="invalidity" *ngIf="loginForm.controls['confirmpassword'].touched && loginForm.controls['confirmpassword'].value != loginForm.controls['password'].value">Please enter same password</div>
       <br />
       <br />
-    <label>
-      Gender:
-      </label><br />
-      <input class="imputfield" type="text" placeholder="Gender" formControlName="gender">
-      <div class="invalidity" *ngIf="loginForm.controls['gender'].touched && !loginForm.controls['gender'].valid">Enter gender as: M/F/O</div>
+      <label>
+        Gender:
+      </label>
+      <br />
+      <input class="imputfield" type="text" placeholder="Gender" formControlName="gender" maxlength="1">
+      <div class="invalidity" *ngIf="loginForm.controls['gender'].touched && !loginForm.controls['gender'].valid">Enter gender as: M/F/O/m/f/o</div>
       <br />
       <br />
-    <label>
-      Emp Id:
-      </label><br />
+      <label>
+        Emp Id:
+      </label>
+      <br />
       <input class="imputfield" type="text" placeholder="EMP ID" formControlName="empid">
       <div class="invalidity" *ngIf="loginForm.controls['empid'].touched && !loginForm.controls['empid'].valid">Enter Valid Employee id</div>
       <br />
       <br />
-    <input type="submit" [disabled]="!loginForm.valid">
-  </div>
+      <input type="submit" [disabled]="!loginForm.valid">
+    </div>
   </form>
 </body>
 

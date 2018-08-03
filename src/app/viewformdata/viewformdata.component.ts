@@ -10,11 +10,13 @@ import { FormserviceService } from '../formservice.service';
 
 export class ViewformdataComponent implements OnInit {
   show;
-  constructor( private formservice:FormserviceService,private routes:Router) {
-    this.show=formservice.getMethod();
+  constructor(private formservice: FormserviceService, private routes: Router) {
+    this.show = formservice.getMethod();
   }
   ngOnInit() {
+
   }
+
   backtoedit() {
     this.routes.navigate(["/editdata"]);
   }

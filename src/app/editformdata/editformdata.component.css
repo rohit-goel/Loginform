@@ -2,6 +2,8 @@
     color: red;
     background-color: lightpink;
     padding: 10px;
+    border: 5px;
+    border-color: red;
     
 }
 
@@ -15,6 +17,13 @@
 }
 
 .imputfield{
+    width: 100%;
+    background-color: lightcyan;
+    height: 30px;
+}
+
+
+#imputfield{
     width: 100%;
     background-color: lightcyan;
 }
